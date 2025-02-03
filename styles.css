@@ -1,0 +1,169 @@
+/* General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+/* Loader Wrapper */
+.loader-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.1s ease-out;
+}
+
+/* 3D Cube */
+.cube {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 1.5s infinite linear;
+}
+
+/* Cube Faces */
+.side {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: 2px solid white;
+}
+
+.front {
+  transform: translateZ(2rem);
+}
+.back {
+  transform: rotateY(180deg) translateZ(2rem);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(2rem);
+}
+.right {
+  transform: rotateY(90deg) translateZ(2rem);
+}
+.top {
+  transform: rotateX(90deg) translateZ(2rem);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(2rem);
+}
+
+/* Cube Rotation Animation */
+@keyframes rotateCube {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none;
+  }
+}
+
+/* Hide Content Initially */
+.content {
+  padding: 10px;
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+}
+.content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  background-color: #2c5364; /* Change background color */
+  color: #ffffff; /* Text color */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.content h3 {
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #1f5e74;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.content h6 {
+  font-size: 16px;
+  color: #cccccc;
+}
+
+/* Fade Out Loader */
+.loader-wrapper.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Social Links Styling */
+.social-link {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 5px 4px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Instagram */
+.instagram {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+
+/* GitHub */
+.github {
+  background: #333;
+}
+
+/* Telegram */
+.telegram {
+  background: #0088cc;
+}
+
+/* Email */
+.email {
+  background: #d44638;
+}
+
+/* Hover Effect */
+.social-link:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+footer {
+  text-align: center;
+  padding: 2px;
+  color: grey;
+  font-size: 15px;
+  margin-top: 10px;
+}
